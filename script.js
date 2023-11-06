@@ -112,7 +112,7 @@ fetch( 'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mast
                 return color[9];
             }
         })
-        .on('mouseover', (d)=> {
+        .on('mouseover', (event,d)=> {
         tooltip.style('opacity', 0.9);
         tooltip.attr('data-year', d['year']);
         let month = ["January", "February", "March", "April", "May", "June",
@@ -132,8 +132,8 @@ fetch( 'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mast
               'variance: ' +
               d['variance'] + '&#8451'   
           )
-          .style('left', xScale(d['year']) + 'px')
-          .style('top', yScale(new Date(0,d['month']-1,0,0,0,0,0)) + 200 + 'px');
+          .style('left', event.pageX + 10 + 'px')
+          .style('top', event.pageY - 28 + 'px');
       })
       .on('mouseout', function () {
         tooltip.style('opacity', 0);
