@@ -132,8 +132,8 @@ fetch( 'https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mast
               'variance: ' +
               d['variance'] + '&#8451'   
           )
-          .style('left', event.pageX - 250 + 'px')
-          .style('top', event.pageY - 28 + 'px');
+          .style('left', event.pageX + 10 + 'px')
+          .style('top', event.pageY - 28 + 'px')
       })
       .on('mouseout', function () {
         tooltip.style('opacity', 0);
